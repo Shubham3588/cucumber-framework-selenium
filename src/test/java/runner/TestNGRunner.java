@@ -13,7 +13,8 @@ import listeners.AnnotationTransformer;
 					"html:target/cucumber-reports.html",
 					"json:target/cucumber-reports.json",
 					"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-					"rerun:target/failed_scenarios.txt"
+					"rerun:target/failed_scenarios.txt",
+					 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 					
 			},
 			monochrome = true
