@@ -51,12 +51,18 @@ public class Hooks {
 	
 	@After
 	public void attachFinalScreenshot(Scenario scenario) throws IOException {
-	    WebDriver driver = textcontextsetup.getDriver();
-	    if (driver != null) {
-	        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	        byte[] fileContent = FileUtils.readFileToByteArray(src);
-	        scenario.attach(fileContent, "image/png", "Final Screenshot");
+		try {
+			 WebDriver driver = textcontextsetup.getDriver();
+			    if (driver != null) {
+			        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			        byte[] fileContent = FileUtils.readFileToByteArray(src);
+			        scenario.attach(fileContent, "image/png", "Final Screenshot");
+			    }
+			
+		} catch (Exception e) {
+	        System.out.println("Screenshot capture failed: " + e.getMessage());
 	    }
+	   
 	}
 	
 	
