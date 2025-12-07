@@ -49,35 +49,10 @@ public class Hooks {
 		return textcontextsetup;
 	}
 	
-	@After
-	public void attachFinalScreenshot(Scenario scenario) throws IOException {
-		try {
-			 WebDriver driver = textcontextsetup.getDriver();
-			    if (driver != null) {
-			        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			        byte[] fileContent = FileUtils.readFileToByteArray(src);
-			        scenario.attach(fileContent, "image/png", "Final Screenshot");
-			    }
-			
-		} catch (Exception e) {
-	        System.out.println("Screenshot capture failed: " + e.getMessage());
-	    }
-	   
-	}
+
 	
 	
-	
-	@AfterStep
-	public void AddScreenshot(Scenario scenario ) throws IOException {
-		WebDriver driver = textcontextsetup.getDriver();
-		if(scenario.isFailed()) {
-			File sourcePath=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			String screenshotPath = "test-output/SparkReport/screenshots/" + scenario.getName() + ".png";
-			 FileUtils.copyFile(sourcePath, new File(screenshotPath));
-			byte[] fileContent =FileUtils.readFileToByteArray(sourcePath);
-			scenario.attach(fileContent, "image/png", "image");
-		}
-	}
+
 	
 
 }
