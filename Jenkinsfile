@@ -22,17 +22,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
-                    bat "mvn clean install -DskipTests"
-                }
+                bat "mvn clean install -DskipTests"
             }
         }
 
         stage('Run Tests') {
             steps {
-                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
-                    bat "mvn test"
-                }
+                bat "mvn test"
             }
         }
 
@@ -45,6 +41,9 @@ pipeline {
         stage('Cucumber Report') {
             steps {
                 publishHTML([
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
                     reportDir: 'target/cucumber-reports',
                     reportFiles: 'cucumber-html-reports.html',
                     reportName: 'Cucumber HTML Report'
