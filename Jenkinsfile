@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK17'
+        jdk 'JDK17'          // Jenkins will auto-download this
         maven 'Maven3'
     }
 
@@ -22,19 +22,17 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "mvn clean install -DskipTests"
+                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
+                    bat "mvn clean install -DskipTests"
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat "mvn test"
-            }
-        }
-
-        stage('Generate Reports') {
-            steps {
-                bat "mvn allure:report || exit 0"
+                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
+                    bat "mvn test"
+                }
             }
         }
 
@@ -48,7 +46,7 @@ pipeline {
     post {
         always {
             junit 'target/surefire-reports/*.xml'
-            archiveArtifacts artifacts: 'target/**/*.*', fingerprint: true
+            archiveArtifacts artifacts: 'target/**/*.*'
         }
     }
 }
