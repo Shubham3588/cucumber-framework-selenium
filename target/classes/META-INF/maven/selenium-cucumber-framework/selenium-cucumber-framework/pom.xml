@@ -153,11 +153,9 @@
                 <version>3.2.5</version>
                 <configuration>
                     <includes>
-                        <include>**/TestRunner*.java</include>
+                        <include>**/TestNGRunner*.java</include>
                     </includes>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+
 
                     <systemPropertyVariables>
                         <allure.results.directory>target/allure-results</allure.results.directory>
