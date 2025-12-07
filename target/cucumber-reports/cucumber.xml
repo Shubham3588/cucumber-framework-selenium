@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="9.719" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login Feature" name="Validate user login successfully - Example #1.1" time="9.416">
+<system-out><![CDATA[
+Given User navigates to the url.............................................passed
+When Screen Loads...........................................................passed
+And User enters "test3588@gmail.com" in email field.........................passed
+And User enters "Test@2025" in password Field...............................passed
+And User clicks on Login button.............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -17,7 +17,6 @@ import listeners.AnnotationTransformer;
 					 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 					   "html:target/cucumber-reports/cucumber.html",
 					   "junit:target/cucumber-reports/cucumber.xml",
-					   "tech.grasshopper.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 					
 			},
 			monochrome = true
