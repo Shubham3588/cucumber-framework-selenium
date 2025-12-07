@@ -20,59 +20,35 @@ pipeline {
             }
         }
 
-        stage('Build & Test') {
-            parallel {
-                stage('Maven Test') {
-                    steps {
-                        sh "mvn clean test -DskipTests=false"
-                    }
-                }
-                stage('Static Checks (Optional)') {
-                    when { expression { false } } // enable later if needed
-                    steps {
-                        echo 'Run static analysis tools here (SpotBugs, Checkstyle, etc)'
-                    }
-                }
+        stage('Build') {
+            steps {
+                bat "mvn clean install -DskipTests"
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat "mvn test"
             }
         }
 
         stage('Generate Reports') {
             steps {
-                // Allure Report Generation (local folder)
-                sh "mvn allure:report || true"
+                bat "mvn allure:report || exit 0"
             }
         }
 
-        stage('Publish Reports in Jenkins') {
+        stage('Cucumber Report') {
             steps {
-                // JUnit
-                junit 'target/surefire-reports/*.xml'
-
-                // Cucumber JSON plugin
                 cucumber fileIncludePattern: 'target/cucumber-reports/*.json'
-
-                // HTML Report for Allure
-                publishHTML(target: [
-                    reportDir: 'target/allure-report',
-                    reportFiles: 'index.html',
-                    reportName: 'Allure Report',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true,
-                    allowMissing: true
-                ])
             }
         }
     }
 
     post {
         always {
+            junit 'target/surefire-reports/*.xml'
             archiveArtifacts artifacts: 'target/**/*.*', fingerprint: true
-        }
-        failure {
-            echo 'Build failed – please check console logs and reports.'
-        }
-        success {
-            echo 'Build passed – all tests green!'
         }
     }
 }
