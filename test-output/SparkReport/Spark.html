@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Oct 21, 2025 07:03:43 pm</span></a>
+<a href="#"><span class="badge badge-primary">Nov 18, 2025 11:28:30 pm</span></a>
 </li>
 </ul>
 </div>
@@ -66,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Oct 21, 2025 07:03:43 pm</h3>
+<h3>Nov 18, 2025 11:28:30 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Oct 21, 2025 07:04:01 pm</h3>
+<h3>Nov 18, 2025 11:28:59 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -123,9 +123,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+<div><small data-tooltip='50%'><b>1</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='100%'><b>1</b> scenarios failed,
+<small data-tooltip='50%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -143,9 +143,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='85%'><b>6</b> steps passed</small></div>
+<div><small data-tooltip='93%'><b>14</b> steps passed</small></div>
 <div>
-<small data-tooltip='14%'><b>1</b> steps failed,
+<small data-tooltip='6%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Login Feature":17.183
+"Login Feature":28.277
 };
 </script>
 <div class="row">
@@ -198,13 +198,13 @@ failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 0,
+passChild: 1,
 failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 6,
+passGrandChild: 14,
 failGrandChild: 1,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -236,7 +236,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Login Feature</p>
             <p class="text-sm">
-              <span>7:03:44 pm</span> / <span>00:00:17:183</span>
+              <span>11:28:30 pm</span> / <span>00:00:28:277</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -245,9 +245,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Login Feature</h5>
-<span class='badge badge-success'>10.21.2025 7:03:44 pm</span>
-<span class='badge badge-danger'>10.21.2025 7:04:01 pm</span>
-<span class='badge badge-default'>00:00:17:183</span>
+<span class='badge badge-success'>11.18.2025 11:28:30 pm</span>
+<span class='badge badge-danger'>11.18.2025 11:28:59 pm</span>
+<span class='badge badge-default'>00:00:28:277</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -269,7 +269,60 @@ eventsCount: 5,
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate user login successfully</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Validate user login successfully</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigates to the url</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Screen Loads</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User enters "test3588@gmail.com" in email field</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User enters "Test@2025" in password Field</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks on Login button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Verify user landed to Homepage</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>stepDefinitions.Hooks.attachFinalScreenshot(io.cucumber.java.Scenario)</span>
+      <div>Final Screenshot
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./screenshots/embedded1.png' src="./screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="19"><span class="badge log fail-bg mr-2">Fail</span>Validate user login successfully</div>
                     <div class="status-avatar float-right">
                       <i class="fa fa-paperclip"></i>
                     </div>
@@ -304,17 +357,17 @@ eventsCount: 5,
                   <div class="step fail-bg">
                     <span>Then Verify user landed to Homepage</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),' Login Successfully ')] (tried for 10 second(s) with 500 milliseconds interval)
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Login Successfully')] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\acer\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57115}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57115/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: db9a9ca114eaf1951a3960499d59ede6
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.61, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\acer\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55953}, goog:processID: 38292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55953/devtoo..., se:cdpVersion: 142.0.7444.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96ccb09dd2e317dbdf132e8aa0d4bb69
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at pageObjects.BasePage.WaitUntilVisibilityOfElement(BasePage.java:24)
 	at pageObjects.LoginPage.getToastMessage(LoginPage.java:47)
-	at stepDefinitions.LoginSteps.verify_user_landed_to_homepage(LoginSteps.java:61)
+	at stepDefinitions.LoginSteps.verify_user_landed_to_homepage(LoginSteps.java:62)
 	at ✽.Verify user landed to Homepage(file:///C:/Users/acer/eclipse-workspace/selenium-cucumber-framework/src/test/resources/features/login.feature:9)
 </textarea>
       
@@ -324,7 +377,18 @@ Session ID: db9a9ca114eaf1951a3960499d59ede6
                     <span>stepDefinitions.Hooks.AddScreenshot(io.cucumber.java.Scenario)</span>
       <div>image
           <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded1.png' src="./screenshots/embedded1.png">
+<img data-featherlight='./screenshots/embedded2.png' src="./screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>stepDefinitions.Hooks.attachFinalScreenshot(io.cucumber.java.Scenario)</span>
+      <div>Final Screenshot
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./screenshots/embedded3.png' src="./screenshots/embedded3.png">
     
     </div></div>
 </div>
@@ -379,9 +443,9 @@ Session ID: db9a9ca114eaf1951a3960499d59ede6
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>19:03:51 pm</td>
+<td>23:28:47 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='15'>Then Verify user landed to Homepage</a>
+<a href="#" class="linked" test-id='1' id='31'>Then Verify user landed to Homepage</a>
 <div class="">
 <span class="badge badge-default">Login Feature.Validate user login successfully.Then Verify user landed to Homepage</span>
 </div>

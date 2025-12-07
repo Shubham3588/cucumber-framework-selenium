@@ -26,7 +26,7 @@ public class LoginPage extends BasePage{
 	private By emailField = By.xpath("//*[starts-with(@id,'userEmail')]");
 	private By passwordField = By.xpath("//*[contains(@id,'userPassword')]");
 	private By loginButton = By.id("login");
-	private By toastMessage = By.xpath("//*[contains(text(),' Login Successfully ')]");
+	private By toastMessage = By.xpath("//*[contains(text(),'Login Successfully')]");
 	
 	
 	public void enterEmail(String email) {

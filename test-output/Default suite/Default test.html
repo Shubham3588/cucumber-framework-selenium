@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 21 21:36:48 IST 2025</td>
+<td>Started on:</td><td>Tue Nov 18 23:28:29 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21862 ms)</td>
+<tr><td>Total time:</td><td>29 seconds (29969 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,35 +76,35 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.ParallelTestNGRunner.runScenario()'><b>runScenario</b><br>Test class: runner.ParallelTestNGRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user login successfully", "Login Feature"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),&apos; Login Successfully &apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+<td title='runner.TestNGRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestNGRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user login successfully", "Login Feature"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),&apos;Login Successfully&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\acer\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50725}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50725/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a573a1abeade6f013d96cca8797dad36
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.61, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\acer\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55953}, goog:processID: 38292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55953/devtoo..., se:cdpVersion: 142.0.7444.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96ccb09dd2e317dbdf132e8aa0d4bb69
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at pageObjects.BasePage.WaitUntilVisibilityOfElement(BasePage.java:24)
 	at pageObjects.LoginPage.getToastMessage(LoginPage.java:47)
-	at stepDefinitions.LoginSteps.verify_user_landed_to_homepage(LoginSteps.java:61)
+	at stepDefinitions.LoginSteps.verify_user_landed_to_homepage(LoginSteps.java:62)
 	at ✽.Verify user landed to Homepage(file:///C:/Users/acer/eclipse-workspace/selenium-cucumber-framework/src/test/resources/features/login.feature:9)
-</pre></div><a href='#' onClick='toggleBox("stack-trace18640545", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace18640545'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),&apos; Login Successfully &apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2027044202", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2027044202'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),&apos;Login Successfully&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\acer\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50725}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50725/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a573a1abeade6f013d96cca8797dad36
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.61, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\acer\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55953}, goog:processID: 38292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55953/devtoo..., se:cdpVersion: 142.0.7444.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96ccb09dd2e317dbdf132e8aa0d4bb69
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at pageObjects.BasePage.WaitUntilVisibilityOfElement(BasePage.java:24)
 	at pageObjects.LoginPage.getToastMessage(LoginPage.java:47)
-	at stepDefinitions.LoginSteps.verify_user_landed_to_homepage(LoginSteps.java:61)
+	at stepDefinitions.LoginSteps.verify_user_landed_to_homepage(LoginSteps.java:62)
 	at ✽.Verify user landed to Homepage(file:///C:/Users/acer/eclipse-workspace/selenium-cucumber-framework/src/test/resources/features/login.feature:9)
 </pre></div></td>
-<td>21</td>
-<td>runner.ParallelTestNGRunner@7c83dc97</td></tr>
+<td>16</td>
+<td>runner.TestNGRunner@6a03bcb1</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -115,10 +115,10 @@ Session ID: a573a1abeade6f013d96cca8797dad36
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.ParallelTestNGRunner.runScenario()'><b>runScenario</b><br>Test class: runner.ParallelTestNGRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user login successfully", "Login Feature"</td>
+<td title='runner.TestNGRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestNGRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user login successfully", "Login Feature"</td>
 <td></td>
-<td>12</td>
-<td>runner.ParallelTestNGRunner@7c83dc97</td></tr>
+<td>11</td>
+<td>runner.TestNGRunner@6a03bcb1</td></tr>
 </table><p>
 </body>
 </html>

@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import enums.BrowserType;
 import utils.ConfigReader;
 
 
@@ -15,26 +16,30 @@ public class WebDriverManager{
 	
 	public WebDriver getDriver() {
 		
-	String browser = ConfigReader.getProperty("browser").toLowerCase();
+	String browser = ConfigReader.getProperty("browser");
+	
+	  BrowserType browserType = BrowserType.fromString(browser);
 	
 	switch(browser) {
-	case "firefox":
+	case "FIREFOX":
 		driver = new FirefoxDriver();
 		
 		break;
 		
-	  case "edge":
+	  case "EDGE":
           System.setProperty("webdriver.edge.driver", "path/to/msedgedriver.exe");
           driver = new EdgeDriver();
          
           break;
 	
 	
-	case "chrome":
-		defaut:
+	case "CHROME":
+		default:
 		driver=new ChromeDriver();
 		
 		break;
+		
+	
 	
 }
 	

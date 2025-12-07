@@ -14,14 +14,15 @@ import listeners.AnnotationTransformer;
 					"json:target/cucumber-reports.json",
 					"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 					"rerun:target/failed_scenarios.txt"
+					
 			},
 			monochrome = true
 			)
 
 
 
-@Listeners(AnnotationTransformer.class)		
-//@Listeners(listeners.TestNGListeners.class)
+//@Listeners(AnnotationTransformer.class)		
+@Listeners(listeners.TestNGListeners.class)
 public class TestNGRunner extends AbstractTestNGCucumberTests{}
 
 
