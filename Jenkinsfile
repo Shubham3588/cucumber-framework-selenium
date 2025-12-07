@@ -22,13 +22,17 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "mvn clean install -DskipTests"
+                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
+                    bat "mvn clean install -DskipTests"
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat "mvn test"
+                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
+                    bat "mvn test"
+                }
             }
         }
 
@@ -40,7 +44,11 @@ pipeline {
 
         stage('Cucumber Report') {
             steps {
-                cucumber fileIncludePattern: 'target/cucumber-reports/*.json'
+                publishHTML([
+                    reportDir: 'target/cucumber-reports',
+                    reportFiles: 'cucumber-html-reports.html',
+                    reportName: 'Cucumber HTML Report'
+                ])
             }
         }
     }
