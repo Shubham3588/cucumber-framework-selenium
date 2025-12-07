@@ -10,7 +10,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
+                git branch: 'master',
                 url: 'https://github.com/Shubham3588/cucumber-framework-selenium.git'
             }
         }
