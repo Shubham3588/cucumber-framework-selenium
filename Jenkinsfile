@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK17'          // Jenkins will auto-download this
+        jdk 'JDK17'
         maven 'Maven3'
     }
 
@@ -22,7 +22,11 @@ pipeline {
 
         stage('Build') {
             steps {
-                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
+                withEnv([
+                    "JAVA_HOME=${tool name: 'JDK17'}",
+                    "PATH+JDK=${tool name: 'JDK17'}/bin"
+                ]) {
+                    bat "java -version"           // For verification
                     bat "mvn clean install -DskipTests"
                 }
             }
@@ -30,7 +34,10 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                withEnv(["JAVA_HOME=${tool 'JDK17'}", "PATH+JDK=${tool 'JDK17'}/bin"]) {
+                withEnv([
+                    "JAVA_HOME=${tool name: 'JDK17'}",
+                    "PATH+JDK=${tool name: 'JDK17'}/bin"
+                ]) {
                     bat "mvn test"
                 }
             }
