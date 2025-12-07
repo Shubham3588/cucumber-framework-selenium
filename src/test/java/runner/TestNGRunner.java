@@ -14,7 +14,10 @@ import listeners.AnnotationTransformer;
 					"json:target/cucumber-reports.json",
 					"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 					"rerun:target/failed_scenarios.txt",
-					 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+					 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+					   "html:target/cucumber-reports/cucumber.html",
+					   "junit:target/cucumber-reports/cucumber.xml",
+					   "tech.grasshopper.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 					
 			},
 			monochrome = true

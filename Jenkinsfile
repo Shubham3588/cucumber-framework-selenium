@@ -32,21 +32,34 @@ pipeline {
             }
         }
 
-        stage('Generate Reports') {
+        stage('Generate Allure Report') {
             steps {
                 bat "mvn allure:report || exit 0"
             }
         }
 
-        stage('Cucumber Report') {
+        stage('Publish Cucumber HTML Report') {
             steps {
                 publishHTML([
-                    allowMissing: true,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
                     reportDir: 'target/cucumber-reports',
-                    reportFiles: 'cucumber-html-reports.html',
-                    reportName: 'Cucumber HTML Report'
+                    reportFiles: 'cucumber.html',
+                    reportName: 'Cucumber HTML Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: true
+                ])
+            }
+        }
+
+        stage('Publish Extent Report') {
+            steps {
+                publishHTML([
+                    reportDir: 'target/extent-report',
+                    reportFiles: 'index.html',
+                    reportName: 'Extent HTML Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: true
                 ])
             }
         }
