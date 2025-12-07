@@ -22,24 +22,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                withEnv([
-                    "JAVA_HOME=${tool name: 'JDK17'}",
-                    "PATH+JDK=${tool name: 'JDK17'}/bin"
-                ]) {
-                    bat "java -version"           // For verification
-                    bat "mvn clean install -DskipTests"
-                }
+                bat "mvn clean install -DskipTests"
             }
         }
 
         stage('Run Tests') {
             steps {
-                withEnv([
-                    "JAVA_HOME=${tool name: 'JDK17'}",
-                    "PATH+JDK=${tool name: 'JDK17'}/bin"
-                ]) {
-                    bat "mvn test"
-                }
+                bat "mvn test"
+            }
+        }
+
+        stage('Generate Reports') {
+            steps {
+                bat "mvn allure:report || exit 0"
             }
         }
 
@@ -53,7 +48,7 @@ pipeline {
     post {
         always {
             junit 'target/surefire-reports/*.xml'
-            archiveArtifacts artifacts: 'target/**/*.*'
+            archiveArtifacts artifacts: 'target/**/*.*', fingerprint: true
         }
     }
 }
